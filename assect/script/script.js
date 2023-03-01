@@ -14,7 +14,7 @@ function modal(operation) {
     let button = document.getElementById("add-button");
     
     if(operation==="add"){
-    button.innerText = "Add New Task";
+    button.innerText = "Add   Task";
         clearInputBox();
 
 
@@ -59,7 +59,7 @@ function addTask() {
     let inputDisc = discElem.value.trim();
 
 
-    clearInputBox();
+    // clearInputBox();
 
 
 
@@ -133,6 +133,10 @@ function addTask() {
     }
     hideModal();
 }
+
+
+
+
 function deleteThis(elem) {
 
     console.log(elem);
@@ -145,7 +149,7 @@ function deleteThis(elem) {
     setTimeout(() => {
         targetElem.remove();
 
-    }, 100);
+    }, 500);
  
 
 }
@@ -189,3 +193,7 @@ function editThis(elem) {
 
 
 }
+
+
+
+

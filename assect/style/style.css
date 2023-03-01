@@ -15,7 +15,7 @@ body {
 }
 
 body{
-    background: url("https://images.pexels.com/photos/68562/pexels-photo-68562.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+    background: url(../img/background.jpg);
     background-size: cover;
     object-fit: cover;
     background-repeat: no-repeat;
@@ -73,10 +73,11 @@ body{
 .to-do-list .to-do-item {
     
     color: black;
-    /* background: linear-gradient(0deg, rgb(246, 199, 46), rgba(255, 255, 255, 0.6)); */
-    background-image: url("https://images.pexels.com/photos/235985/pexels-photo-235985.jpeg?cs=srgb&dl=pexels-pixabay-235985.jpg&fm=jpg");
+     
+    background-image: url(../img/card.jpg);
     background-size: cover;
     object-fit: cover;
+
     color: white !important;
 }
 

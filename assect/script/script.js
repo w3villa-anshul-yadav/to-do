@@ -1,24 +1,52 @@
-let id = 0;
-// let button = document.getElementById("add-button");
-
-// button.innerText = "Add New Task";
+let id = 0,editId=0;
+ 
 
 console.log("hello");
 let toDoList = document.getElementsByClassName("to-do-list")[0];
 
-function modal() {
+
+
+
+
+function modal(operation) {
     let modalview = document.getElementsByClassName("input-container")[0];
     modalview.classList.toggle("display-modal");
+    let button = document.getElementById("add-button");
+    
+    if(operation==="add"){
+    button.innerText = "Add New Task";
+        clearInputBox();
+
+
+
+}    else
+    button.innerText = "Edit Task";
+
 
 }
 function hideModal() {
+
     let modalview = document.getElementsByClassName("input-container")[0];
+   
     modalview.classList.toggle("display-modal");
 }
 
 
+function clearInputBox(){
+
+    let inputElem = document.getElementById("to-do-input");
+    let dateElem = document.getElementById("date-input");
+    let discElem = document.getElementById("discription-input");
+
+    let inputText = inputElem.value.trim();
+    let inputDate = dateElem.value.trim();
+    let inputDisc = discElem.value.trim();
+    inputElem.value = "";
+    dateElem.value = "";
+    discElem.value = "";
+}
+
 function addTask() {
-    id++;
 
     let button = document.getElementById("add-button");
 
@@ -26,13 +54,12 @@ function addTask() {
     let dateElem = document.getElementById("date-input");
     let discElem = document.getElementById("discription-input");
 
-
     let inputText = inputElem.value.trim();
-    inputElem.value = "";
     let inputDate = dateElem.value.trim();
-    dateElem.value = "";
     let inputDisc = discElem.value.trim();
-    discElem.value = "";
+
+
+    clearInputBox();
 
 
 
@@ -42,18 +69,18 @@ function addTask() {
     }
     else {
         if (button.innerText === "Edit Task") {
-            let editTask = document.getElementById("task-" + id);
-            let editDate = document.getElementById("date-" + id);
-            let editDiscription = document.getElementById("discription-" + id);
+            let editTask = document.getElementById("task-" + editId);
+            let editDate = document.getElementById("date-" + editId);
+            let editDiscription = document.getElementById("discription-" + editId);
 
             editTask.innerText = inputText;
             editDate.innerText = inputDate;
             editDiscription.innerText = inputDisc;
-            button.innerText = "Add New Task";
-
-
+             
+            
         }
         else {
+             id++;
 
 
             let toDoList = document.getElementsByClassName("to-do-list")[0];
@@ -70,10 +97,10 @@ function addTask() {
 <div>
     <p class="to-do-text">
         <span class="task-heading">Task `+ id + `: </span>  
-        <span id="task-`+ id + `"> ` + inputText + `</span>
+        <span id="task-`+ id + `"> `+" " + inputText + `</span>
      </p>
 
-<p id="date-`+ id + `" class="to-do-date">` + inputDate + `
+<p id="date-`+ id + `" class="to-do-date">` +" "+ inputDate + `
 
 </p>
 
@@ -84,7 +111,7 @@ function addTask() {
         <span class="task-heading">
             Discription:</span>
             
-           <span id="discription-`+ id + `" > ` + inputDisc + `
+           <span id="discription-`+ id + `" > ` +" "+ inputDisc + `
         </span>
     </p>
     <div class="task-button">
@@ -114,12 +141,12 @@ function deleteThis(elem) {
     let targetElem = document.getElementById(elem);
 
     targetElem.style["transform"] = "translateX(85vw)";
-    targetElem.style["transition"] = ".3s ease-in-out";
+    targetElem.style["transition"] = ".3s ease";
     setTimeout(() => {
         targetElem.remove();
 
-    }, 500);
-
+    }, 100);
+ 
 
 }
 function editThis(elem) {
@@ -134,24 +161,20 @@ function editThis(elem) {
     let inputDate = document.getElementById("date-input");
     let inputDiscription = document.getElementById("discription-input");
 
-    id = elem.slice(-1);
+    editId = elem.slice(-1);
 
-    let editTask = document.getElementById("task-" + id);
-    let editDate = document.getElementById("date-" + id);
-    let editDiscription = document.getElementById("discription-" + id);
+    let editTask = document.getElementById("task-" + editId);
+    let editDate = document.getElementById("date-" + editId);
+    let editDiscription = document.getElementById("discription-" + editId);
 
 
 
     let parentElem = document.getElementById(elem);
-    // parentElem.style["transform"] = "translate(45vh,85vw)";
-    // parentElem.style["transition"] = ".5s ease-in-out";
+   
 
 
-    id = id - 1;
-    setTimeout(() => {
-        // parentElem.remove();
-
-    }, 2000);
+    
+    
 
 
 
@@ -161,8 +184,8 @@ function editThis(elem) {
     inputDiscription.value = editDiscription.innerText;
 
 
-
-    modal();
+    
+    modal("edit");
 
 
 }

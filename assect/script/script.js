@@ -1,17 +1,32 @@
 let id = 1;
+// let button = document.getElementById("add-button");
 
+// button.innerText = "Add New Task";
 
 console.log("hello");
 let toDoList = document.getElementsByClassName("to-do-list")[0];
 
+function modal() {
+    let modalview = document.getElementsByClassName("input-container")[0];
+    modalview.classList.toggle("display-modal");
+
+}
+function hideModal() {
+    let modalview = document.getElementsByClassName("input-container")[0];
+    modalview.classList.toggle("display-modal");
+}
 
 
 function addTask() {
-
     id++;
+
+    let button = document.getElementById("add-button");
+
     let inputElem = document.getElementById("to-do-input");
     let dateElem = document.getElementById("date-input");
     let discElem = document.getElementById("discription-input");
+
+
     let inputText = inputElem.value.trim();
     inputElem.value = "";
     let inputDate = dateElem.value.trim();
@@ -19,23 +34,41 @@ function addTask() {
     let inputDisc = discElem.value.trim();
     discElem.value = "";
 
+
+
+
     if (inputText.length === 0 || inputDisc.length === 0 || inputDate.length === 0) {
         alert("input required");
-    } else {
-        let toDoList = document.getElementsByClassName("to-do-list")[0];
+    }
+    else {
+        if (button.innerText === "Edit Task") {
+            let editTask = document.getElementById("task-" + id);
+            let editDate = document.getElementById("date-" + id);
+            let editDiscription = document.getElementById("discription-" + id);
+
+            editTask.innerText = inputText;
+            editDate.innerText = inputDate;
+            editDiscription.innerText = inputDisc;
+
+        }
+        else {
+            button.innerText = "Add New Task";
 
 
-        console.log(inputDate);
-
-        toDoList.insertAdjacentHTML("beforeend",
+            let toDoList = document.getElementsByClassName("to-do-list")[0];
 
 
+            console.log(inputDate);
 
-            `
+            toDoList.insertAdjacentHTML("beforeend",
+
+
+
+                `
 <div class="to-do-item" id="l-`+ id + `" >
 <div>
     <p class="to-do-text">
-        <span class="task-heading">Task: </span>  
+        <span class="task-heading">Task `+ id + `: </span>  
         <span id="task-`+ id + `"> ` + inputText + `</span>
      </p>
 
@@ -63,13 +96,14 @@ function addTask() {
 </div>
 
 `
- 
 
 
-        );
- 
 
+            );
+
+        }
     }
+    hideModal();
 }
 function deleteThis(elem) {
 
@@ -88,6 +122,7 @@ function deleteThis(elem) {
 
 }
 function editThis(elem) {
+
     let button = document.getElementById("add-button");
 
     button.innerText = "Edit Task";
@@ -107,15 +142,15 @@ function editThis(elem) {
 
 
     let parentElem = document.getElementById(elem);
-    parentElem.style["transform"] = "translate(45vh,85vw)";
-    parentElem.style["transition"] = ".5s ease-in-out";
+    // parentElem.style["transform"] = "translate(45vh,85vw)";
+    // parentElem.style["transition"] = ".5s ease-in-out";
 
 
     id = id - 1;
     setTimeout(() => {
-        parentElem.remove();
+        // parentElem.remove();
 
-    }, 500);
+    }, 2000);
 
 
 
@@ -126,7 +161,7 @@ function editThis(elem) {
 
 
 
-
+    modal();
 
 
 }

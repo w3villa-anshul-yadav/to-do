@@ -10,26 +10,29 @@
     <title>TO-DO</title>
 </head>
 
-<body  >
+<body>
     <section class="hero">
-        
+
+        <div class="heading">
+            To Do App
+            <button  onclick="modal()">Add New Task</button>
+        </div>
         <div class="to-do-container">
-            <div class="heading">
-                Today's Task
-            </div>
+            
+
             <div class="to-do-list">
                 <div class="to-do-item" id="l-1">
                     <div>
                         <p class="to-do-text">
-                            <span class="task-heading">Task: </span>  
+                            <span class="task-heading">Task 1: </span>
                             <span id="task-1"> Add Tasks</span>
-                         </p>
+                        </p>
 
-                    <p id="date-1" class="to-do-date">2023-03-01
+                        <p id="date-1" class="to-do-date">2023-03-01
 
 
 
-                    </p>
+                        </p>
 
                     </div>
 
@@ -37,33 +40,33 @@
                         <p class="to-do-discription">
                             <span class="task-heading">
                                 Discription:</span>
-                                
-                               <span id="discription-1" > Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error iusto dolor quam laborum doloremque possimus quaerat explicabo eum corporis enim.
+
+                            <span id="discription-1"> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error
+                                iusto dolor quam laborum doloremque possimus quaerat explicabo eum corporis enim.
                             </span>
                         </p>
                         <div class="task-button">
-                            <input type="button"  value="Delete" onclick="deleteThis('l-1')"> 
-                        <input  type="button"  value="Edit" onclick="editThis('l-1')"> 
+                            <input type="button" value="Delete" onclick="deleteThis('l-1')">
+                            <input type="button" value="Edit" onclick="editThis('l-1')">
                         </div>
-                    
+
                     </div>
-                
+
                 </div>
             </div>
 
             <div class="input-container">
-                
-                <input class="date-input" type="date"  name="trip-start" id="date-input"
-                >             
-                   <input type="text" class="input" placeholder="Enter TO DO" id="to-do-input">
+
+                <input class="date-input" type="date" name="trip-start" id="date-input">
+                <input type="text" class="input" placeholder="Enter TO DO" id="to-do-input">
                 <textarea placeholder="Add Discription" id="discription-input"></textarea>
 
 
-                <button id="add-button" onclick="addTask()">Add New Task</button>
+                <button id="add-button" class="button" onclick="addTask()">Add New Task</button>
             </div>
         </div>
     </section>
-    <p>Developed by <a href="mailto:anyadav411998@gmail.com">Anshul Yadav</a></p>
+    <p class="developed-by">Developed by <a href="mailto:anyadav411998@gmail.com">Anshul Yadav</a></p>
 </body>
 
 </html>

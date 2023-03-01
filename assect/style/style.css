@@ -1,161 +1,199 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-body{
-    padding: 5px;
+
+body {
+    /* padding: 5px; */
 }
 
- 
+
 ::-webkit-scrollbar {
     width: 0;
-  }
+}
 
-.hero{
-    /* background: url(../image/background.jpg); */
+body{
+    background: url("https://images.pexels.com/photos/68562/pexels-photo-68562.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
     background-size: cover;
     object-fit: cover;
+    background-repeat: no-repeat;
     background-attachment: fixed;
-    padding-left:  100px;
+    padding-left: 100px;
     padding-right: 100px;
+    /* opacity: 40%; */
+    min-height: 100vh;
+}
 
-     min-height: 100vh;
-  }
-.to-do-container{
-   
-     display: flex;
+.to-do-container {
+
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: 80vh;
-    padding: 70px 0;
- }
-.heading{
-     position: fixed;
-    top:5px;
+    min-height: 95vh;
+    /* padding: 70px 0; */
+}
+
+.heading {
+    position: sticky;
+    top: 5px;
     font-weight: bold;
     font-size: 40px;
     color: red;
     padding: 15px;
-}
-.to-do-item button{
-    width: 120px !important;
-    
-}
-.to-do-item input:first-child{
- background-color: red;    
- color: white;
-}
-.to-do-item input:last-child{
- background-color: green;    
- color: white;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    align-items: center;
 }
 
- .to-do-list{
-   
+.to-do-item button {
+    width: 120px !important;
+
+}
+
+.to-do-item input:first-child {
+    background-color: red;
+    color: white;
+}
+
+.to-do-item input:last-child {
+    background-color: green;
+    color: white;
+}
+
+.to-do-list {
+
     display: flex;
     flex-direction: column;
     justify-content: center;
     overflow: auto;
-     width: 65%;
- }
-
-.to-do-list .to-do-item{
-   
-    color: black;
-    background-color: rgb(246, 229, 196);
+    width: 850px;
 }
+
+.to-do-list .to-do-item {
+
+    color: black;
+    background: linear-gradient(0deg, rgb(246, 167, 47), rgba(255, 255, 255, .4));}
 
 .input-container {
-    display: flex;
+    display: none;
+ }
+.display-modal{
+    display: flex !important;
     justify-content: center;
-     flex-direction: column;
+    flex-direction: column;
+    align-items: center;
     position: fixed;
-    bottom: 10px;
-    right: 10px;
-    gap:5px;
-    /* background-color: aqua; */
+    background: linear-gradient(0deg, black, rgba(255, 255, 255, 0.4));
+    border-radius: 25px;
+        width: 45%;
+    height: 500px;
+    top: 22%;
+    right: 27.5%;
+    gap: 5px;
 }
-
-.input,textarea,.date-input{
+.input,
+textarea,
+.date-input {
     width: 380px;
     height: 60px;
     color: black;
-     padding: 10px 30px;
+    padding: 10px 30px;
     border-radius: 10px;
-    /* border: none; */
+    border: none;
     outline: none;
     font-size: 24px;
- }
-textarea{
+}
+
+textarea {
     height: 100px;
 }
-.date-input{
+
+.date-input {
     background-color: white;
     color: black;
-    
+
 }
-input[type='button'],button{
-     
+
+input[type='button'],
+button {
+
     width: 150px;
     height: 60px;
-     border-radius: 10px;
+    border-radius: 12px;
     border: none;
     background-color: green;
     color: white;
     font-size: 20px;
 }
-button:hover,input[type='button']:hover{
+
+button:hover,
+input[type='button']:hover {
     transform: scale(1.06);
     transition: .3s ease-in-out;
 }
 
 
-button{
+.button {
     position: relative;
+    margin-top: 10px;
+    width: 370px;
     
-    left: 30%;
-    right: 55%;
 }
 
-.to-do-item{
+.to-do-item {
     border-radius: 10px;
     padding: 10px;
     margin-top: 10px;
- }
-.to-do-item> div{
+}
+
+.to-do-item>div {
     display: flex;
     justify-content: space-between;
     margin-top: 10px;
-    padding: 10px;
  
 }
-.to-do-item .task-heading{
+
+.to-do-item .task-heading {
     color: green;
     font-weight: bold;
     font-size: 24px;
- }
-.to-do-item .to-do-text{
+}
+
+.to-do-item .to-do-text {
     font-size: 23px;
- }
-.to-do-item input{
+}
+
+.to-do-item input {
     width: 80px;
     height: 30px;
     margin-top: 10px;
 }
-.to-do-discription{
+
+.to-do-discription {
     margin-top: 10px;
-    
+
     width: 80%;
     font-size: 20px;
 }
-.task-button{
+
+.task-button {
     display: flex;
     flex-direction: column;
 }
-.to-do-date{
+
+.to-do-date {
     color: rgb(8, 8, 8);
     font-weight: bold;
+}
+.developed-by{
+    position: relative;
+    bottom: -100px;
+    color: white;
+}
+.developed-by a{
+    color: white;
 }

@@ -1,4 +1,4 @@
-let id = 1;
+let id = 0;
 // let button = document.getElementById("add-button");
 
 // button.innerText = "Add New Task";
@@ -49,10 +49,11 @@ function addTask() {
             editTask.innerText = inputText;
             editDate.innerText = inputDate;
             editDiscription.innerText = inputDisc;
+            button.innerText = "Add New Task";
+
 
         }
         else {
-            button.innerText = "Add New Task";
 
 
             let toDoList = document.getElementsByClassName("to-do-list")[0];

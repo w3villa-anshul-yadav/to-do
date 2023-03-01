@@ -82,6 +82,7 @@ body{
     display: none;
  }
 .display-modal{
+    transition: .3s ease-in-out;
     display: flex !important;
     justify-content: center;
     flex-direction: column;

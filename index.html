@@ -32,9 +32,11 @@
 
             <div class="input-container">
 
-                <input class="date-input" type="date" name="trip-start" id="date-input">
-                <input type="text" class="input" placeholder="Enter TO DO" id="to-do-input">
-                <textarea placeholder="Add Discription" id="discription-input"></textarea>
+                <input class="date-input" type="date" name="trip-start" id="date-input"  onchange="checkRequired(this)">
+
+                <input type="text" class="input" name="task" placeholder="Enter TO DO" id="to-do-input"  onchange="checkRequired(this)">
+
+                <textarea placeholder="Add Discription" class="" id="discription-input"  name="Discription" onchange="checkRequired(this)"></textarea>
 
 
                 <button id="add-button" class="button" onclick="addTask()">Add Task</button>

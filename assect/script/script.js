@@ -1,5 +1,5 @@
-let id = 0,editId=0;
- 
+let id = 0, editId = 0;
+
 
 console.log("hello");
 let toDoList = document.getElementsByClassName("to-do-list")[0];
@@ -12,27 +12,61 @@ function modal(operation) {
     let modalview = document.getElementsByClassName("input-container")[0];
     modalview.classList.toggle("display-modal");
     let button = document.getElementById("add-button");
-    
-    if(operation==="add"){
-    button.innerText = "Add   Task";
+
+    if (operation === "add") {
+        button.innerText = "Add   Task";
         clearInputBox();
+        
+        
+        
+    } else if(operation ==="required"){
+        
+        button.innerText = "Add   Task";
+    }
+    
+    else
+        button.innerText = "Edit Task";
 
 
+}
 
-}    else
-    button.innerText = "Edit Task";
+function desableRequired(){
 
+    let inputElem = document.getElementById("to-do-input");
+    let dateElem = document.getElementById("date-input");
+    let discElem = document.getElementById("discription-input");
+    discElem.style.border = "none";
+    inputElem.style.border = "none";
+    dateElem.style.border = "none";
 
+    dateElem.classList.remove("required");
+    inputElem.classList.remove("required");
+    discElem.classList.remove("required");
 }
 function hideModal() {
 
     let modalview = document.getElementsByClassName("input-container")[0];
-   
+
     modalview.classList.toggle("display-modal");
 }
 
+function checkRequired(elem){
 
-function clearInputBox(){
+    if(elem.value.length === 0){
+        elem.style.border = "3px solid red";
+        console.log("not"+elem);
+        
+        elem.classList.add("required");
+    }else{
+        elem.style.border = "none";
+        console.log("yes"+elem);
+
+        elem.classList.remove("required");
+    }
+}
+
+
+function clearInputBox() {
 
     let inputElem = document.getElementById("to-do-input");
     let dateElem = document.getElementById("date-input");
@@ -59,15 +93,36 @@ function addTask() {
     let inputDisc = discElem.value.trim();
 
 
-    // clearInputBox();
 
 
 
-
-    if (inputText.length === 0 || inputDisc.length === 0 || inputDate.length === 0) {
-        alert("input required");
+    if (inputDate.length === 0) {
+        desableRequired();
+        dateElem.style.border = "3px solid red";
+        dateElem.classList.toggle("required");
+        modal("required");
+    }
+    
+    
+    else if (inputText.length === 0) {
+        desableRequired();
+        inputElem.style.border = "3px solid red";
+        inputElem.classList.toggle("required");
+        
+        modal("required");
+    }
+    else if (inputDisc.length === 0) {
+        desableRequired();
+        discElem.style.border = "3px solid red";
+        discElem.classList.toggle("required");
+         
+        modal("required");
     }
     else {
+
+        clearInputBox();
+        desableRequired();
+
         if (button.innerText === "Edit Task") {
             let editTask = document.getElementById("task-" + editId);
             let editDate = document.getElementById("date-" + editId);
@@ -76,11 +131,11 @@ function addTask() {
             editTask.innerText = inputText;
             editDate.innerText = inputDate;
             editDiscription.innerText = inputDisc;
-             
-            
+
+
         }
         else {
-             id++;
+            id++;
 
 
             let toDoList = document.getElementsByClassName("to-do-list")[0];
@@ -97,10 +152,10 @@ function addTask() {
 <div>
     <p class="to-do-text">
         <span class="task-heading">Task `+ id + `: </span>  
-        <span id="task-`+ id + `"> `+" " + inputText + `</span>
+        <span id="task-`+ id + `"> ` + " " + inputText + `</span>
      </p>
 
-<p id="date-`+ id + `" class="to-do-date">` +" "+ inputDate + `
+<p id="date-`+ id + `" class="to-do-date">` + " " + inputDate + `
 
 </p>
 
@@ -111,7 +166,7 @@ function addTask() {
         <span class="task-heading">
             Discription:</span>
             
-           <span id="discription-`+ id + `" > ` +" "+ inputDisc + `
+           <span id="discription-`+ id + `" > ` + " " + inputDisc + `
         </span>
     </p>
     <div class="task-button">
@@ -141,7 +196,7 @@ function deleteThis(elem) {
 
     console.log(elem);
 
-
+    if(confirm("do you want to really delete this task")){
     let targetElem = document.getElementById(elem);
 
     targetElem.style["transform"] = "translateX(85vw)";
@@ -150,7 +205,8 @@ function deleteThis(elem) {
         targetElem.remove();
 
     }, 500);
- 
+}
+
 
 }
 function editThis(elem) {
@@ -174,11 +230,11 @@ function editThis(elem) {
 
 
     let parentElem = document.getElementById(elem);
-   
 
 
-    
-    
+
+
+
 
 
 
@@ -188,7 +244,7 @@ function editThis(elem) {
     inputDiscription.value = editDiscription.innerText;
 
 
-    
+
     modal("edit");
 
 

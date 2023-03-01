@@ -204,6 +204,23 @@ input[type='button']:hover {
 .developed-by a{
     color: white;
 }
+
+
+.input-container input{
+    position: relative;
+}
+
+
+.required::after{
+    content: "field required";
+     color: red;
+    font-size: 17px;
+     padding: 3px;
+    position: absolute;
+    right: 66px;
+
+}
+
 @media screen and (max-width:1060px) {
     .to-do-list {
         width: 90vw;

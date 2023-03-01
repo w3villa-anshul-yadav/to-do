@@ -1,0 +1,157 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+ 
+::-webkit-scrollbar {
+    width: 0;
+  }
+
+.hero{
+    background: url(../image/background.jpg);
+    background-size: cover;
+    object-fit: cover;
+    background-attachment: fixed;
+    padding-left:  100px;
+    padding-right: 100px;
+
+     min-height: 100vh;
+  }
+.to-do-container{
+   
+     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    padding: 70px 0;
+ }
+.heading{
+     position: fixed;
+    top:5px;
+    font-weight: bold;
+    font-size: 40px;
+    color: red;
+    padding: 15px;
+}
+.to-do-item button{
+    width: 120px !important;
+    
+}
+.to-do-item input:first-child{
+ background-color: red;    
+ color: white;
+}
+.to-do-item input:last-child{
+ background-color: green;    
+ color: white;
+}
+
+ .to-do-list{
+   
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: auto;
+     width: 65%;
+ }
+
+.to-do-list .to-do-item{
+   
+    color: black;
+    background-color: rgb(246, 229, 196);
+}
+
+.input-container {
+    display: flex;
+    justify-content: center;
+     flex-direction: column;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    gap:5px;
+}
+
+.input,textarea,.date-input{
+    width: 380px;
+    height: 60px;
+    color: red;
+     padding: 10px 30px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    font-size: 25px;
+ }
+textarea{
+    height: 100px;
+}
+.date-input{
+    background-color: white;
+    color: black;
+    
+}
+input[type='button'],button{
+     
+    width: 150px;
+    height: 60px;
+     border-radius: 10px;
+    border: none;
+    background-color: green;
+    color: white;
+    font-size: 20px;
+}
+button:hover,input[type='button']:hover{
+    transform: scale(1.06);
+    transition: .3s ease-in-out;
+}
+
+
+button{
+    position: relative;
+    
+    left: 30%;
+    right: 55%;
+}
+
+.to-do-item{
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 10px;
+ }
+.to-do-item> div{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    padding: 10px;
+ 
+}
+.to-do-item .task-heading{
+    color: green;
+    font-weight: bold;
+    font-size: 24px;
+ }
+.to-do-item .to-do-text{
+    font-size: 23px;
+ }
+.to-do-item input{
+    width: 70px;
+    height: 30px;
+    margin-top: 10px;
+}
+.to-do-discription{
+    margin-top: 10px;
+    
+    width: 80%;
+    font-size: 20px;
+}
+.task-button{
+    display: flex;
+    flex-direction: column;
+}
+.to-do-date{
+    color: rgb(8, 8, 8);
+    font-weight: bold;
+}

@@ -5,41 +5,33 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap" rel="stylesheet">
 
 
-    <link rel="stylesheet" href="./assect/style/style.css">
-    <script src="./assect/script/script.js"></script>
+    <link rel="stylesheet" href="./assets/style/style.css">
+    <script src="./assets/script/script.js"></script>
     <title>TO-DO</title>
 </head>
 
 <body>
     <section class="hero">
-
         <div class="heading">
             To Do App
             <button  onclick="modal('add')">Add  Task</button>
         </div>
         <div class="to-do-container">
-            
-
             <div class="to-do-list">
-                 
             </div>
-
             <div class="input-container">
+                <input class="date-input" min="2023-03-01" type="date" name="trip-start" id="date-input"  onkeypress="ensureValidation(this)">
+                <input type="text" class="input" name="task" placeholder="Enter TO DO" id="to-do-input"  onkeypress="ensureValidation(this)">
 
-                <input class="date-input" type="date" name="trip-start" id="date-input"  onchange="checkRequired(this)">
-
-                <input type="text" class="input" name="task" placeholder="Enter TO DO" id="to-do-input"  onchange="checkRequired(this)">
-
-                <textarea placeholder="Add Discription" class="" id="discription-input"  name="Discription" onchange="checkRequired(this)"></textarea>
+                <textarea placeholder="Add Discription" class="" id="discription-input"  name="Discription"  onkeypress="ensureValidation(this)" ></textarea>
 
 
-                <button id="add-button" class="button" onclick="addTask()">Add Task</button>
+                <button id="add-button" class="button" onclick="submitTask()">Add Task</button>
             </div>
         </div>
     </section>

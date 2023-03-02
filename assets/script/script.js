@@ -14,7 +14,7 @@ function modal(operation) {
         button.innerText = "Edit Task"
     }
 }
-function desableRequired(){
+function disableRequired(){
     let inputElem = document.getElementById("to-do-input");
     let dateElem = document.getElementById("date-input");
     let discElem = document.getElementById("discription-input");
@@ -22,7 +22,7 @@ function desableRequired(){
     inputElem.style.border = "none";
     dateElem.style.border = "none";
     dateElem.classList.remove("required");
-    inputElem.classList.remove("required");
+    inputElem.classList.remove("required"); 
     discElem.classList.remove("required");
 }
 function hideModal() {
@@ -60,26 +60,26 @@ function submitTask() {
     let inputDate = dateElem.value.trim();
     let inputDisc = discElem.value.trim();
     if (isValidLength(dateElem) ) {
-        desableRequired();
+        disableRequired();
         dateElem.style.border = "3px solid red";
         dateElem.classList.toggle("required");
         modal("required");
     }
     else if (isValidLength(inputElem) ) {
-        desableRequired();
+        disableRequired();
         inputElem.style.border = "3px solid red";
         inputElem.classList.toggle("required");
         modal("required");
     }
     else if (isValidLength(discElem) ) {
-        desableRequired();
+        disableRequired();
         discElem.style.border = "3px solid red";
         discElem.classList.toggle("required");
         modal("required");
     }
     else {
         clearInputBox();
-        desableRequired();
+        disableRequired();
         if (button.innerText === "Edit Task") {
             let editTask = document.getElementById("task-" + editId);
             let editDate = document.getElementById("date-" + editId);

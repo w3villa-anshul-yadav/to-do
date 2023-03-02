@@ -1,5 +1,14 @@
 let id = 0, editId = 0;
-console.log("hello");
+ var date = new Date();
+var day = date.getDate();
+var month = date.getMonth() + 1;
+var year = date.getFullYear();
+if (month < 10) month = "0" + month;
+if (day < 10) day = "0" + day;
+var today = year + "-" + month + "-" + day;       
+let elem=document.getElementById("date-input").setAttribute("min",`${today}`);
+console.log(elem);
+
 let toDoList = document.getElementsByClassName("to-do-list")[0];
 function modal(operation) {
     let modalview = document.getElementsByClassName("input-container")[0];

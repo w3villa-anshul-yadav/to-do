@@ -8,7 +8,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./assets/style/style.css">
-    <script src="./assets/script/script.js"></script>
     <title>TO-DO</title>
 </head>
 <body>
@@ -21,7 +20,7 @@
             <div class="to-do-list">
             </div>
             <div class="input-container">
-                <input class="date-input" min="2023-03-01" type="date" name="trip-start" id="date-input"  onkeypress="ensureValidation(this)">
+                <input class="date-input"  type="date" name="trip-start" id="date-input"  onkeypress="ensureValidation(this)">
                 <input type="text" class="input" name="task" placeholder="Enter TO DO" id="to-do-input"  onkeypress="ensureValidation(this)">
                 <textarea placeholder="Add Discription" class="" id="discription-input"  name="Discription"  onkeypress="ensureValidation(this)" ></textarea>
                 <button id="add-button" class="button" onclick="submitTask()">Add Task</button>
@@ -29,5 +28,7 @@
         </div>
     </section>
     <p class="developed-by">Developed by <a href="mailto:anyadav411998@gmail.com">Anshul Yadav</a></p>
+    <script src="./assets/script/script.js"></script>
+
 </body>
 </html>

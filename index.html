@@ -20,9 +20,10 @@
             <div class="to-do-list">
             </div>
             <div class="input-container">
-                <input class="date-input"  type="date" name="trip-start" id="date-input"  onkeypress="ensureValidation(this)">
-                <input type="text" class="input" name="task" placeholder="Enter TO DO" id="to-do-input"  onkeypress="ensureValidation(this)">
-                <textarea placeholder="Add Discription" class="" id="discription-input"  name="Discription"  onkeypress="ensureValidation(this)" ></textarea>
+                <div id="messageDiv"></div>
+                <input class="date-input"  type="date" name="trip-start" id="date-input"  onkeyup="ensureValidation(this)">
+                <input type="text" class="input" name="task" placeholder="Enter TO DO" id="to-do-input"  onkeyup="ensureValidation(this)">
+                <textarea placeholder="Add Discription" class="" id="discription-input"  name="Discription"  onkeyup="ensureValidation(this)" ></textarea>
                 <button id="add-button" class="button" onclick="submitTask()">Add Task</button>
             </div>
         </div>

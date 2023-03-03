@@ -22,6 +22,12 @@ body{
     /* opacity: 40%; */
     min-height: 100vh;
 }
+.task-already-exist::after{
+    content: "!!!task already exist";
+     color: red;
+     margin-bottom: 10px;
+     font-size: 20px;
+}
 
 .to-do-container {
 
@@ -208,13 +214,28 @@ input[type='button']:hover {
 }
 
 
-.required::after{
-    content: "field required";
+.required-date::after{
+    content: "Date is required";
      color: red;
-    font-size: 17px;
-     padding: 3px;
-    position: absolute;
-    right: 66px;
+     margin-bottom: 10px;
+     font-size: 21px;
+     
+
+    }
+    .required-task::after{
+        content: "Task to do is required";
+        color: red;
+        margin-bottom: 10px;
+        font-size: 21px;
+        
+        
+    }
+    .required-disc::after{
+        content: "Discription is required";
+        color: red;
+        font-size: 21px;
+        margin-bottom: 10px;
+     
 
 }
 

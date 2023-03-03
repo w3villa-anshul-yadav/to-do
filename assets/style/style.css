@@ -25,6 +25,10 @@ body{
 .task-already-exist::after{
     content: "!!!task already exist";
      color: red;
+     background-color: white;
+     border-radius: 10px;
+     padding: 5px;
+
      margin-bottom: 10px;
      font-size: 20px;
 }
@@ -218,7 +222,11 @@ input[type='button']:hover {
     content: "Date is required";
      color: red;
      margin-bottom: 10px;
+     padding: 5px;
+
      font-size: 21px;
+      background-color: white;
+     border-radius: 10px;
      
 
     }
@@ -227,6 +235,9 @@ input[type='button']:hover {
         color: red;
         margin-bottom: 10px;
         font-size: 21px;
+         background-color: white;
+         padding: 5px;
+     border-radius: 10px;
         
         
     }
@@ -235,6 +246,10 @@ input[type='button']:hover {
         color: red;
         font-size: 21px;
         margin-bottom: 10px;
+        padding: 5px;
+
+         background-color: white;
+     border-radius: 10px;
      
 
 }

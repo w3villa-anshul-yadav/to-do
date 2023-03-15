@@ -179,6 +179,7 @@ input[type='button']:hover {
 
 .to-do-item .to-do-text {
     font-size: 23px;
+    word-wrap: break-word;
 }
 
 .to-do-item input {
@@ -189,7 +190,7 @@ input[type='button']:hover {
 
 .to-do-discription {
     margin-top: 10px;
-    
+    word-wrap: break-word;
     width: 80%;
     font-size: 22px;
 }
